@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "5fe7c964-db56-49af-b9f2-cd19f10554b0",
+		"name": "Arogya Veda App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Subscriptions",
+			"item": [
+				{
+					"name": "Create Subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByYXNhZG1wb3RkYXIyMkBnbWFpbC5jb20iLCJzdWIiOiI2OGJlODlkMS0zNjk3LTQ5MDQtYjczMS0yYmMyODYxNzQ3ODAiLCJpYXQiOjE2ODYzNzgyNzd9.aiTEzykRNf_wTz-5tzShEk7pGbAnei6Se7IoNmTMbMs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"00911129-9560-4ff0-a5b0-0ab05ff1640f\",\r\n   \"price\": 100,\r\n        \"serviceTypeId\": \"375341a6-0b37-4731-9f57-c526f8e9a286\",   \r\n        \"membershipId\": \"f7fa3426-a888-49a8-b311-c2a3da2647a0\",\r\n        \"paymentMode\": \"CASH\",\r\n    \"startDate\": \"2023-06-08 15:32:58.770\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/subscriptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Subscriptions For User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/subscriptions/active/00911129-9560-4ff0-a5b0-0ab05ff1640f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"subscriptions",
+								"active",
+								"00911129-9560-4ff0-a5b0-0ab05ff1640f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Memberships",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/subscriptions/getAllMemberships",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"subscriptions",
+								"getAllMemberships"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Service Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/subscriptions/getAllServiceTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"subscriptions",
+								"getAllServiceTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Spent Days Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/subscriptions/updateSpentDaysCount/a667a332-baef-43db-bfc8-c63f1f99469f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"subscriptions",
+								"updateSpentDaysCount",
+								"a667a332-baef-43db-bfc8-c63f1f99469f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Add New User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Prasad\",\r\n    \"lastName\": \"Potdar\",\r\n    \"email\": \"prasad1m1potda11r22@gmail.com\",\r\n    \"address\": \"Kolhapur\",\r\n    \"mobile\": \"9091901092\",\r\n    \"password\": \"pass\",\r\n    \"subscription\": {\r\n        \"price\": 100,\r\n        \"serviceTypeId\": \"375341a6-0b37-4731-9f57-c526f8e9a286\",   \r\n        \"membershipId\": \"f7fa3426-a888-49a8-b311-c2a3da2647a0\",\r\n        \"paymentMode\": \"CASH\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userName\": \"9090909090\", \"password\": \"pass\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log Out",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userName\": \"9090909090\", \"password\": \"pass\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByYXNhZG1wb3RkYXIyMkBnbWFpbC5jb20iLCJzdWIiOiI2OGJlODlkMS0zNjk3LTQ5MDQtYjczMS0yYmMyODYxNzQ3ODAiLCJpYXQiOjE2ODYzNzgyNzd9.aiTEzykRNf_wTz-5tzShEk7pGbAnei6Se7IoNmTMbMs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"skip\": 2,\r\n    \"limit\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/users/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
